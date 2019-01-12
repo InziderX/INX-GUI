@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=INX Wallet
+Comment=INX wallet
+Exec=INX %U
+Terminal=false
+Type=Application
+Icon=inx
+MimeType=x-scheme-handler/inx;
+Categories=Office;Finance;
+Name[en_CA]=inxwallet.desktop
