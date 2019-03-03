@@ -1045,9 +1045,25 @@ bool Core::getBlockTemplate(BlockTemplate& b, const AccountPublicAddress& adr, c
     }
   }
 
+  
   b.previousBlockHash = getTopBlockHash();
   b.timestamp = time(nullptr);
 
+
+  // Jagerman fix - https://github.com/graft-project/GraftNetwork/pull/118/commits
+uint64_t blockchain_timestamp_check_window = b.majorVersion < BLOCK_MAJOR_VERSION_1 ? parameters::BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW : parameters::BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V1;  
+if(height >= blockchain_timestamp_check_window) {
+std::vector<uint64_t> timestamps;
+for(size_t offset = height - blockchain_timestamp_check_window; offset < height; ++offset) {
+timestamps.push_back(getBlockTimestampByIndex(offset));
+}
+uint64_t median_ts = Common::medianValue(timestamps);
+if (b.timestamp < median_ts) {
+b.timestamp = median_ts;
+}
+}
+
+//////
   size_t medianSize = calculateCumulativeBlocksizeLimit(height) / 2;
 
   assert(!chainsStorage.empty());
