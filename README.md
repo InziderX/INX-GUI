@@ -10,7 +10,7 @@ Copyright (c) 2018, The INX developers
 
 Building INX GUI
 
-----> On LIUX 16.04 <-----
+----> On LINUX 16.04 <-----
 
 $ apt-get update
 $ apt-get upgrade
