@@ -21,7 +21,7 @@ $ apt-get install qtbase5-dev libssl-dev cmake git libboost1.58-all-dev build-es
 
 $ git clone https://github.com/InziderX/INX-GUI.git
 
-$ cd INX-GUI.git
+$ cd INX-GUI
 
 $ mkdir build
 
