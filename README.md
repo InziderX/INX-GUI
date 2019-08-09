@@ -14,14 +14,23 @@ Building INX GUI
 ---------------------------
 
 $ apt-get update
+
 $ apt-get upgrade
+
 $ apt-get install qtbase5-dev libssl-dev cmake git libboost1.58-all-dev build-essential g++
+
 $ git clone https://github.com/InziderX/INX-GUI.git
+
 $ cd INX-GUI.git
+
 $ mkdir build
+
 $ cd build
+
 $ cmake CMakeLists.txt
+
 $ make -j 8
+
 
 #### On Windows
 
