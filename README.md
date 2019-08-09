@@ -8,18 +8,17 @@ Copyright (c) 2018, The INX developers
 # INX
  
 
--= Building INX GUI =-
+Building INX GUI
 
-On *nix:
+----> On LIUX 16.04 <-----
 
-
-
-```bash
 $ apt-get update
 $ apt-get upgrade
 $ apt-get install qtbase5-dev libssl-dev cmake git libboost1.58-all-dev build-essential g++
-$ git clone https://github.com/InziderX/INXCoin-QT-GUI-Wallet
-$ cd INXCoin-QT-GUI-Wallet/
+$ git clone https://github.com/InziderX/INX-GUI.git
+$ cd INX-GUI.git
+$ mkdir build
+$ cd build
 $ cmake CMakeLists.txt
 $ make -j 8
 
